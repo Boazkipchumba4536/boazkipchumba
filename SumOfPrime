@@ -1,0 +1,35 @@
+package TestApllication;
+
+import java.util.Scanner;
+
+public class SumOfPrime {
+    public static void main(String[] args)
+    {
+        int number, minimum, maximum, i, count, sum = 0;
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print(" Please Enter the Minimum value : ");
+        minimum = scanner.nextInt();
+
+        System.out.print(" Please Enter the Maximum value : ");
+        maximum = scanner.nextInt();
+
+        for(number = minimum; number <= maximum; number++)
+        {
+            count = 0;
+            for (i = 2; i <= number/2; i++)
+            {
+                if(number % i == 0)
+                {
+                    count++;
+                    break;
+                }
+            }
+            if(count == 0 && number != 1 )
+            {
+                sum = sum + number;
+            }
+        }
+        System.out.println("\n The Sum of Prime Numbers = " + sum);
+    }
+}
