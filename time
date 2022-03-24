@@ -1,0 +1,46 @@
+package TestApllication;
+
+import java.util.Scanner;
+
+public class Time {
+        static void ConvertingSecToDay(int number)
+        {
+            int day = number / (24 * 3600);
+
+            number = number % (24 * 3600);
+            int hour = number / 3600;
+
+            number %= 3600;
+            int minutes = number / 60 ;
+
+            number %= 60;
+            int seconds = number;
+
+            System.out.println( day + " " + "days " + hour
+                    + " " + "hours " + minutes + " "
+                    + "minutes " + seconds + " "
+                    + "seconds ");
+        }
+        public static void main (String[] args)
+        {
+            boolean bool;
+            String number;
+            Scanner scanner = new Scanner(System.in);
+            do {
+                System.out.println("Welcome to My Java Application...");
+            System.out.println("Please enter number in seconds...");
+            number = scanner.next();
+            try {
+                Integer.parseInt(number);
+                bool = false;
+            }
+            catch (NumberFormatException e){
+                System.out.println("Please enter number in seconds...");
+                bool = true;
+            }
+            }
+            while (bool);{
+            ConvertingSecToDay(Integer.parseInt(number));
+            }
+        }
+}
